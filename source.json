@@ -27,7 +27,7 @@
   {
     "comment": "Allow all Resolution x FPS pairs",
     "find": "(function .\\(.,.,.,.,.\\)\\{)var .=!0.+\\},",
-    "replace": "$1return !0}},"
+  "replace": "$1return !0}},"
   },
   {
     "comment": "Add resolution messages",
@@ -45,7 +45,7 @@
   },
   {
     "comment": "Add resolution buttons pfunc",
-    "find": "(\"p\"\\)\\},.=\\[).+?(.\\(.\\.RESOLUTION_)SOURCE([^\\r]+?_)SOURCE(.+?)\\]",
+    "find": "(\"p\"\\)\\},.=\\[).+?(.\\(.\\.RESOLUTION_)SOURCE([^\\r]+?_)SOURCE([^\\]]+?)\\]",
     "v1": [22, 64, 144, 240, 480, 720, 1080, 1440, 2160, "SOURCE"],
     "replace": { "start": "$1", "loop": ",$2|1|$3|1|$4", "end": "]" }
   },
@@ -57,7 +57,7 @@
   },
   {
     "comment": "Add FPS buttons pfunc",
-    "find": "(60\\)\\],T=\\[)(.+?FPS_).+?(,.+?\\.FPS_).+?([\\)\\}]+).+?\\]",
+    "find": "(60\\)\\],.=\\[)(.+?FPS_).+?(,.+?\\.FPS_).+?([\\)\\}]+).+?\\]",
     "v1": [1, 5, 15, 30, 60, 90, 120, 240],
     "replace": { "start": "$1", "loop": ",$2|1|$3|1|$4", "end": "]" }
   },
