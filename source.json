@@ -78,16 +78,16 @@
   {
     "comment": "Enable localStorage",
     "find": "delete window.localStorage",
-    "replace": ""
+    "replace": "window.ls = window.localStorage"
   },
   {
     "comment": "store local changes",
     "find": "var t=e.settings,n=t.type,r=t.proto;",
-    "replace": "if(window.localStorage && e.local && e.settings.proto.appearance?.clientThemeSettings)window.localStorage.protoOverride=JSON.stringify(window.localStorage.protoOverride ? window._.assign(JSON.parse(window.localStorage.protoOverride),e.settings.proto):e.settings.proto);var t=e.settings,n=t.type,r=t.proto;"
+    "replace": "if(e.local && e.settings.proto.appearance?.clientThemeSettings)window.ls.protoOverride=JSON.stringify(window.ls.protoOverride ? window._.assign(JSON.parse(window.ls.protoOverride),e.settings.proto):e.settings.proto);var t=e.settings,n=t.type,r=t.proto;"
   },
   {
     "comment": "read localStorage for themes",
     "find": "(return S\\.proto)",
-    "replace": "(window.localStorage && window.localStorage.protoOverride && !S.proto.appearance.clientThemeSettings) && window._.assign(S.proto,JSON.parse(window.localStorage.protoOverride));$1"
+    "replace": "(window.ls.protoOverride && !S.proto.appearance.clientThemeSettings) && window._.assign(S.proto,JSON.parse(window.ls.protoOverride));$1"
   }
 ]
