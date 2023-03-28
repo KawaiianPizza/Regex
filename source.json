@@ -26,8 +26,8 @@
   },
   {
     "comment": "Allow all Resolution x FPS pairs",
-    "find": "(function .\\(.,.,.,.,.\\)\\{)var .=!0.+\\},",
-  "replace": "$1return !0}},"
+    "find": "(function .\\(.,.,.,.,.\\)\\{)var .=!0[^\\r]+?\\}\\},",
+	"replace": "$1return!0}},"
   },
   {
     "comment": "Add resolution messages",
