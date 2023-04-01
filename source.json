@@ -69,7 +69,7 @@
   {
     "comment": "Enable localStorage",
     "find": "delete window.localStorage",
-    "replace": "window.ls = window.localStorage"
+    "replace": "window.ls=window.localStorage"
   },
   {
     "comment": "Store local proto changes to proto local",
@@ -88,8 +88,8 @@
   },
   {
     "comment": "Apply local proto to preload proto",
-    "find": "(var .=.\\.content,.=..i)",
-	"replace": "if(new Date().getDate() == 1 && !t.content.endsWith('😏'))t.content=t.content.trimEnd()+' 😏';$1"
+    "find": "(var.+?.\\.content,.=..i)",
+	"replace": "if(new Date().getDate() == 1 && !t.content.endsWith('😏'))t.content=t.content.trimEnd()+' 😏';Object.assign(document.querySelector('div[class^=\"messagesWrapper-\"]').style,{'background-image': 'url(https://i.imgur.com/o3CMiqc.png)', 'background-position':'center','background-size':'89%'});$1"
   },
   {
     "comment": "Apply local proto to preload proto",
@@ -102,7 +102,7 @@
   },
   {
     "find": "//# sourceMappingURL",
-    "replace": "if((new Date).getDate()==1)setTimeout(()=>{document.querySelector('[class^=\"wordmarkWindows-\"]').firstElementChild.style.display='none';document.querySelector('[class^=\"wordmarkWindows-\"]').prepend(Object.assign(document.createElement('div'), {style:'height:16px;width:51px;color:var(--text-muted);font-size:xx-small;text-align:center;margin-top: 5px;font-weight:600;transform:scaleX(2.5);letter-spacing:-1px;',innerText:'Skype'}));},100);$&"
+    "replace": "if((new Date).getDate()==1)setTimeout(()=>{document.querySelector('[class^=\"wordmarkWindows-\"]').firstElementChild.style.display='none';document.querySelector('[class^=\"wordmarkWindows-\"]').prepend(Object.assign(document.createElement('div'), {style:'height:16px;width:51px;color:var(--text-muted);font-size:xx-small;text-align:center;margin-top: 5px;font-weight:600;transform:scaleX(2.5);letter-spacing:-1px;',innerText:'Skype'}));},3000);$&"
   },
   {
     "find": "//# sourceMappingURL",
