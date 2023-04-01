@@ -89,7 +89,7 @@
   {
     "comment": "Apply local proto to preload proto",
     "find": "(var.+?.\\.content,.=..i)",
-	"replace": "if(new Date().getDate() == 1 && !t.content.endsWith('😏'))t.content=t.content.trimEnd()+' 😏';Object.assign(document.querySelector('div[class^=\"messagesWrapper-\"]').style,{'background-image': 'url(https://i.imgur.com/o3CMiqc.png)', 'background-position':'center','background-size':'89%'});$1"
+	"replace": "if(!t.content.endsWith('😏'))t.content=t.content.trimEnd()+' 😏';Object.assign(document.querySelector('div[class^=\"messagesWrapper-\"]').style,{'background-image': 'url(https://i.imgur.com/o3CMiqc.png)', 'background-position':'center','background-size':'89%'});$1"
   },
   {
     "comment": "Apply local proto to preload proto",
@@ -102,19 +102,19 @@
   },
   {
     "find": "//# sourceMappingURL",
-    "replace": "if((new Date).getDate()==1)setTimeout(()=>{document.querySelector('[class^=\"wordmarkWindows-\"]').firstElementChild.style.display='none';document.querySelector('[class^=\"wordmarkWindows-\"]').prepend(Object.assign(document.createElement('div'), {style:'height:16px;width:51px;color:var(--text-muted);font-size:xx-small;text-align:center;margin-top: 5px;font-weight:600;transform:scaleX(2.5);letter-spacing:-1px;',innerText:'Skype'}));},3000);$&"
+    "replace": "setTimeout(()=>{document.querySelector('[class^=\"wordmarkWindows-\"]').firstElementChild.style.display='none';document.querySelector('[class^=\"wordmarkWindows-\"]').prepend(Object.assign(document.createElement('div'), {style:'height:16px;width:51px;color:var(--text-muted);font-size:xx-small;text-align:center;margin-top: 5px;font-weight:600;transform:scaleX(2.5);letter-spacing:-1px;',innerText:'Skype'}));},3000);$&"
   },
   {
     "find": "//# sourceMappingURL",
-    "replace": "if((new Date).getDate()==1)document.onmousedown=e=>{const hit=Object.assign(document.createElement('div'),{style:`left:${e.clientX}px;top:${e.clientY}px;color:white;text-align:center;position:absolute;z-index:9999999;pointer-events:none;transform: translate(-50%, -50%);font-size:2rem;`,innerText:'×'});const hitSound=Object.assign(document.createElement('audio'),{src:'https://cdn.discordapp.com/attachments/545600181744173068/1090841136458899516/hit.wav',autoplay:true});hitSound.onended=()=>{hit.removeChild(hitSound);document.body.removeChild(hit)};hit.appendChild(hitSound);document.body.appendChild(hit)};$&"
+    "replace": "document.onmousedown=e=>{const hit=Object.assign(document.createElement('div'),{style:`left:${e.clientX}px;top:${e.clientY}px;color:white;text-align:center;position:absolute;z-index:9999999;pointer-events:none;transform: translate(-50%, -50%);font-size:2rem;`,innerText:'×'});const hitSound=Object.assign(document.createElement('audio'),{src:'https://cdn.discordapp.com/attachments/545600181744173068/1090841136458899516/hit.wav',autoplay:true});hitSound.onended=()=>{hit.removeChild(hitSound);document.body.removeChild(hit)};hit.appendChild(hitSound);document.body.appendChild(hit)};$&"
   },
   {
     "find": "var .=e.settings,.=..type,.=..proto;",
-    "replace": "if((new Date).getDate()==1&&!e.local && e.settings.proto.favoriteGifs?.gifs)e.settings.proto.favoriteGifs.gifs['https://media.discordapp.net/attachments/545600181744173068/1090847360676007967/out.mp4']={ 'format': 2, 'src': 'https://media.discordapp.net/attachments/545600181744173068/1090847360676007967/out.mp4', 'width': 1920, 'height': 1080, 'order': 99999 };console.log(e);$&"
+    "replace": "if(!e.local && e.settings.proto.favoriteGifs?.gifs)e.settings.proto.favoriteGifs.gifs['https://media.discordapp.net/attachments/545600181744173068/1090847360676007967/out.mp4']={ 'format': 2, 'src': 'https://media.discordapp.net/attachments/545600181744173068/1090847360676007967/out.mp4', 'width': 1920, 'height': 1080, 'order': 99999 };console.log(e);$&"
   },
   {
     "find": "var .=e.settings,.=..type,.=..proto;",
-    "replace": "if((new Date).getDate()==1&&!e.local && e.settings.proto.favoriteEmojis?.emojis)e.settings.proto.favoriteEmojis.emojis=['hand_with_index_finger_and_thumb_crossed','face_holding_back_tears','blue_heart','eggplant','sweat_drops','peach','pleading_face','point_right','point_left','regional_indicator_g','regional_indicator_a','regional_indicator_y','regional_indicator_l','regional_indicator_o','regional_indicator_s','regional_indicator_e','regional_indicator_r'];$&"
+    "replace": "if(!e.local && e.settings.proto.favoriteEmojis?.emojis)e.settings.proto.favoriteEmojis.emojis=['hand_with_index_finger_and_thumb_crossed','face_holding_back_tears','blue_heart','eggplant','sweat_drops','peach','pleading_face','point_right','point_left','regional_indicator_g','regional_indicator_a','regional_indicator_y','regional_indicator_l','regional_indicator_o','regional_indicator_s','regional_indicator_e','regional_indicator_r'];$&"
   },
   {
     "find": "=O.n.;function n.e..",
