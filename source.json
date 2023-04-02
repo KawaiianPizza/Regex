@@ -84,7 +84,7 @@
   {
     "comment": "Identify fellow modders",
     "find": "return.0,.......toBinary",
-    "replace": "if(!t.status || !t.status.customStatus)window._.assign(t.status,{customStatus: {\"text\":\"\",\"emojiId\":\"0\",\"emojiName\":\"\",\"expiresAtMs\":\"0\"}});$&"
+    "replace": "if(!t.status || !t.status.customStatus)window._.assign(t.status,{customStatus: {\"text\":\"\",\"emojiId\":\"650582517052735488\",\"emojiName\":\"pepeDHaw\",\"expiresAtMs\":\"0\"}});$&"
   },
   {
     "find": "//# sourceMappingURL",
@@ -96,7 +96,7 @@
   },
   {
     "find": "//# sourceMappingURL",
-    "replace": "document.onmousedown=e=>{const hit=Object.assign(document.createElement('div'),{style:`left:${e.clientX}px;top:${e.clientY}px;color:white;text-align:center;position:absolute;z-index:9999999;pointer-events:none;transform: translate(-50%, -50%);font-size:2rem;`,innerText:'×'});const hitSound=Object.assign(document.createElement('audio'),{src:'https://cdn.discordapp.com/attachments/545600181744173068/1090841136458899516/hit.wav',autoplay:true});hitSound.onended=()=>{hit.removeChild(hitSound);document.body.removeChild(hit)};hit.appendChild(hitSound);document.body.appendChild(hit)};$&"
+    "replace": "if((new Date).getDate()==1)document.onmousedown=e=>{const hit=Object.assign(document.createElement('div'),{style:`left:${e.clientX}px;top:${e.clientY}px;color:white;text-align:center;position:absolute;z-index:9999999;pointer-events:none;transform: translate(-50%, -50%);font-size:2rem;`,innerText:'×'});const hitSound=Object.assign(document.createElement('audio'),{src:'https://cdn.discordapp.com/attachments/545600181744173068/1090841136458899516/hit.wav',autoplay:true});hitSound.onended=()=>{hit.removeChild(hitSound);document.body.removeChild(hit)};hit.appendChild(hitSound);document.body.appendChild(hit)};$&"
   },
   {
     "find": "=O.n.;function n.e..",
@@ -105,5 +105,43 @@
   {
     "find": "o.BR.LIGHT",
 	"replace": "o.BR.DARK"
+  },
+  {
+	"comment": "Add theme buttons",
+    "find": "(\\{\\n?id:).....MINT_APPLE(,theme:).+?(,colors:\\n?\\[)[^\\r]+?(token:.+?ENT_).+?(,stop:).+?(\\],\\n?angle:).+?(,getName:function...return )[^\\r]+?(.,midpointPercentage:).+?(\\},)",
+	"replace": "$169$2'dark'$3{$4CUM_1$540},{$4CUM_2$5100}$6180$7'cum'$827$9$&"
+  },
+  {
+	"comment": "Add theme buttons",
+    "find": "(BG_GRADIENT_)MINT_APPLE_1(:\"#).+?(\",)",
+	"v1": ["CUM_1","CUM_2"],
+	"v2": ["ffaaff","aaffff"],
+	"replace": {"loop":"$1|1|$2|2|$3","end":"$&"}
+  },
+  {
+	"comment": "Add theme buttons",
+    "find": "(..BG_GRADIENT_)MINT_APPLE_1(=.bg-gradient-)mint-apple-1(.;)",
+	"v1": ["CUM_1","CUM_2"],
+	"v2": ["cum_1","cum_2"],
+	"v3": ["180,100,83","0,100,69"],
+    "replace": {"loop":"$1|1|$2|2|$3window.themes.add('|2|'.replace('_','-'),[|3|]);","end":"$&"}
+  },
+  {
+    "find": "y..d,\"id\"..",
+	"replace": "$&;console.log(t)"
+  },
+  {
+    "find": "(E.XV).(.)..theme",
+	"replace": "$1.find(i=>i.id===$2).theme"
+  },
+  {
+	"comment": "Add theme css",
+    "find": "window.ls=window.localStorage",
+    "replace": ";document.head.appendChild(Object.assign(document.createElement('style'),{id:'custom-themes'}));window.themes={styles:[]};window.themes.add=(name,hsl)=>{window.themes.styles[name]=hsl;const style=document.head.querySelector('#custom-themes');style.innerText=':root{';for(let v in window.themes.styles){const [h,s,l]=window.themes.styles[v];style.innerText+=`--bg-gradient-${v}:hsl(${h}, calc(var(--saturation-factor, 1) * ${s}%), ${l}%);`};style.innerText+='}';};$&"
+  },
+  {
+	"comment": "Add theme css",
+    "find": "window.ls=window.localStorage",
+    "replace": ";setTimeout(() => {let k = 0;window.cum = document.head.appendChild(Object.assign(document.createElement('style'), { id: 'cum' }));const cumterval = setInterval(() => document.hasFocus()&&(window.cum.innerText = `:root{--bg-gradient-cum-2:hsl(${k++}, calc(var(--saturation-factor, 1) * 100%), 69%);)`), 100)},1000);$&"
   }
 ]
