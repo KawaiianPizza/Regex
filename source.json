@@ -126,7 +126,7 @@
   {
 	"comment": "Make cum glow",
     "find": "//# sourceMappingURL",
-    "replace": ";setTimeout(() => {let k = 0;window.cum = document.head.appendChild(Object.assign(document.createElement('style'), { id: 'cum' }));const cumterval = setInterval(() => document.hasFocus()&&(window.cum.innerText = `:root{--bg-gradient-cum-2:hsl(${k++}, calc(var(--saturation-factor, 1) * 100%), 69%);)`), 100)},1000);$&"
+    "replace": ";setTimeout(() => {let k = 0;window.cum = document.head.appendChild(Object.assign(document.createElement('style'), { id: 'cum' }));const cumterval = setInterval(() => document.hasFocus()&&(window.cum.innerText = `:root{--bg-gradient-cum-2:hsl(${k++}, calc(var(--saturation-factor, 1) * 100%), 69%);)`), 150)},1000);$&"
   },
   {
 	"comment": "Meme",
