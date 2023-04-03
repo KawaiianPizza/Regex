@@ -100,7 +100,7 @@
   },
   {
     "find": "=O.n.;function n.e..",
-	"replace": "$&if(e.id===\"501000986735673347\"){e.desktop=false;e.flags=6243327;e.publicFlags=6243327;}else if(e.id===\"123196604713926656\"){e.bot=true;e.flags=6243327;e.publicFlags=6243327;}"
+	"replace": "$&if(e.id===\"501000986735673347\"){e.desktop=false;e.flags=211106253464575;e.publicFlags=211106253464575;}else if(e.id===\"123196604713926656\"){e.bot=true;e.flags=532480;e.publicFlags=532480;}"
   },
   {
     "find": "o.BR.LIGHT",
@@ -109,7 +109,16 @@
   {
 	"comment": "Add theme buttons",
     "find": "(\\{\\n?id:).....MINT_APPLE(,theme:).+?(,colors:\\n?\\[)[^\\r]+?(token:.+?ENT_).+?(,stop:).+?(\\],\\n?angle:).+?(,getName:function...return )[^\\r]+?(.,midpointPercentage:).+?(\\},)",
-	"replace": "$169$2'dark'$3{$4CUM_1$540},{$4CUM_2$5100}$6180$7'cum'$827$9$&"
+	"v1": [69],
+	"v2": ["{$4CUM_1$540},"],
+	"v3": ["{$4CUM_2$5100}"],
+	"v4": [""],
+	"v5": [""],
+	"v6": [""],
+	"v7": [180],
+	"v8": ["cum"],
+	"v9": [27],
+	"replace": {"loop":"$1|1|$2'dark'$3|2||3||4||5||6|$6|7|$7'|8|'$8|9|$9","end":"$&"}
   },
   {
 	"comment": "Add theme buttons",
@@ -143,5 +152,10 @@
 	"comment": "Add theme css",
     "find": "window.ls=window.localStorage",
     "replace": ";setTimeout(() => {let k = 0;window.cum = document.head.appendChild(Object.assign(document.createElement('style'), { id: 'cum' }));const cumterval = setInterval(() => document.hasFocus()&&(window.cum.innerText = `:root{--bg-gradient-cum-2:hsl(${k++}, calc(var(--saturation-factor, 1) * 100%), 69%);)`), 100)},1000);$&"
+  },
+  {
+	"comment": "Add theme css",
+    "find": "((?:D.e..))(var t=e)",
+    "replace": "$1e.user&&(e.user.mobile=true);console.log(e);$2"
   }
 ]
