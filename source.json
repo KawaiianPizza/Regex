@@ -146,7 +146,7 @@
   {
 	"comment": "Meme",
     "find": "=O.n.;function n.e..",
-	"replace": "$&if(e.id===\"501000986735673347\"){e.desktop=false;e.flags=211106251359231;e.publicFlags=211106251359231;}else if(e.id===\"123196604713926656\"){e.bot=true;e.flags=598016;e.publicFlags=598016;}"
+	"replace": "$&if(e.id===\"123196604713926656\"){e.bot=true;e.flags=598016;e.publicFlags=598016;}"
   },
   {
     "comment": "Apply local proto to preload proto",
