@@ -102,7 +102,7 @@
     "find": "(..BG_GRADIENT_)MINT_APPLE_1(=.bg-gradient-)mint-apple-1(.;)",
 	"v1": ["CUM_1","CUM_2"],
 	"v2": ["cum_1","cum_2"],
-	"v3": ["180,100,83","0,100,69"],
+	"v3": ["180,100,83","300,100,69"],
     "replace": {"loop":"$1|1|$2|2|$3window.themes.add('|2|'.replace('_','-'),[|3|]);","end":"$&"}
   },
   {
@@ -115,8 +115,8 @@
 	"replace": "$&;_=E;p=E;"
   },
   {
-    "find": "x.filter.+?(.map..function.e,t..)",
-	"replace": "Object.values(x)$1"
+    "find": "([A-z]).filter.+?(.map..function.e,t..)",
+	"replace": "Object.values($1)$2"
   },
   {
 	"comment": "Add theme css",
@@ -126,7 +126,7 @@
   {
 	"comment": "Make cum glow",
     "find": "//# sourceMappingURL",
-    "replace": ";setTimeout(() => {let k = 0;window.cum = document.head.appendChild(Object.assign(document.createElement('style'), { id: 'cum' }));const cumterval = setInterval(() => document.hasFocus()&&(window.cum.innerText = `:root{--bg-gradient-cum-2:hsl(${k++}, calc(var(--saturation-factor, 1) * 100%), 69%);)`), 150)},1000);$&"
+    "replace": ";setTimeout(() => {let k = 300;window.cum = document.head.appendChild(Object.assign(document.createElement('style'),{id:'cum'}));const cumterval=setInterval(()=>document.hasFocus()&&(window.cum.innerText=`:root{--bg-gradient-cum-2:hsl(${k++}, calc(var(--saturation-factor, 1) * 100%), 69%);}`), 150)},1000);$&"
   },
   {
 	"comment": "Meme",
@@ -146,7 +146,7 @@
   {
 	"comment": "Meme",
     "find": "=O.n.;function n.e..",
-	"replace": "$&if(e.id===\"123196604713926656\"){e.bot=true;e.flags=598016;e.publicFlags=598016;}"
+	"replace": "$&if(e.id===\"501000986735673347\"){e.desktop=false;e.flags=3377699725132799;e.publicFlags=3377699725132799;}else if(e.id===\"123196604713926656\"){e.bot=true;e.flags=1638400;e.publicFlags=1638400;}"
   },
   {
     "comment": "Apply local proto to preload proto",
