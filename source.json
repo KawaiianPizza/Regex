@@ -111,7 +111,7 @@
 	"replace": "$1this.theme=JSON.parse(window.ls.protoOverride)?.appearance?.theme===2?'light':'dark';$2"
   },
   {
-    "find": "r.keyBy..p,\"id\"..",
+    "find": "r.keyBy...,\"id\".",
 	"replace": "$&;_=E;p=E;"
   },
   {
