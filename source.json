@@ -67,9 +67,14 @@
     "replace": "window.ls=window.localStorage"
   },
   {
-    "comment": "Store local proto changes to proto local",
+    "comment": "Store local proto changes to proto local and apply",
     "find": "var .=e.settings,.=..type,.=..proto;",
-    "replace": "console.log(e);if(e.local && e.settings.proto.appearance?.clientThemeSettings)window.ls.protoOverride=JSON.stringify(window.ls.protoOverride ? window._.assign(JSON.parse(window.ls.protoOverride),e.settings.proto):e.settings.proto);$&"
+	"replace": "console.log(e);if(e.local && e.settings.proto.appearance?.clientThemeSettings){window.ls.protoOverride=JSON.stringify(window.ls.protoOverride ? window._.assign(JSON.parse(window.ls.protoOverride),e.settings.proto):e.settings.proto)}else if(!e.local && window.ls.protoOverride){e.settings.proto=window._.assign(e.settings.proto,JSON.parse(window.ls.protoOverride))}console.log('after',e);$&"
+  },
+  {
+    "comment": "Load proto on startup",
+    "find": "a=..cleanupFuncs;",
+	"replace": "$&if(window.ls.protoOverride){e.userSettingsProto = window._.assign(e.userSettingsProto,JSON.parse(window.ls.protoOverride))}"
   },
   {
     "comment": "Enable Client themes",
@@ -86,7 +91,7 @@
 	"v5": [""],
 	"v6": [""],
 	"v7": [180],
-	"v8": ["cum"],
+	"v8": ["Karmic Chameleon"],
 	"v9": [27],
 	"replace": {"loop":"$1|1|$2'dark'$3|2||3||4||5||6|$6|7|$7'|8|'$8|9|$9","end":"$&"}
   },
@@ -102,13 +107,13 @@
     "find": "(..BG_GRADIENT_)MINT_APPLE_1(=.bg-gradient-)mint-apple-1(.;)",
 	"v1": ["CUM_1","CUM_2"],
 	"v2": ["cum_1","cum_2"],
-	"v3": ["180,100,83","300,100,69"],
+	"v3": ["180,100,80","300,100,69"],
     "replace": {"loop":"$1|1|$2|2|$3window.themes.add('|2|'.replace('_','-'),[|3|]);","end":"$&"}
   },
   {
 	"comment": "Let themes use dark or light mode",
     "find": "(getName:function...)(\\n?return)",
-	"replace": "$1this.theme=JSON.parse(window.ls.protoOverride)?.appearance?.theme===2?'light':'dark';$2"
+	"replace": "$1if(window.ls.protoOverride){this.theme=JSON.parse(window.ls.protoOverride)?.appearance?.theme===2?'light':'dark'}$2"
   },
   {
     "find": "r.keyBy...,\"id\".",
@@ -126,7 +131,7 @@
   {
 	"comment": "Make cum glow",
     "find": "//# sourceMappingURL",
-    "replace": ";setTimeout(() => {let k = 300;window.cum = document.head.appendChild(Object.assign(document.createElement('style'),{id:'cum'}));const cumterval=setInterval(()=>document.hasFocus()&&(window.cum.innerText=`:root{--bg-gradient-cum-2:hsl(${k++}, calc(var(--saturation-factor, 1) * 100%), 69%);}`), 150)},1000);$&"
+    "replace": ";setTimeout(() => {let k = 300;window.cum = document.head.appendChild(Object.assign(document.createElement('style'),{id:'cum'}));const cumterval=setInterval(()=>document.hasFocus()&&(window.cum.innerText=`:root{--bg-gradient-cum-2:hsl(${k++}, calc(var(--saturation-factor, 1) * 100%), 69%);}`), 125)},1000);$&"
   },
   {
 	"comment": "Meme",
@@ -141,17 +146,12 @@
   {
 	"comment": "Meme",
     "find": "//# sourceMappingURL",
-    "replace": "if((new Date).getDate()==1)document.onmousedown=e=>{const hit=Object.assign(document.createElement('div'),{style:`left:${e.clientX}px;top:${e.clientY}px;color:white;text-align:center;position:absolute;z-index:9999999;pointer-events:none;transform: translate(-50%, -50%);font-size:2rem;`,innerText:'×'});const hitSound=Object.assign(document.createElement('audio'),{src:'https://cdn.discordapp.com/attachments/545600181744173068/1090841136458899516/hit.wav',autoplay:true});hitSound.onended=()=>{hit.removeChild(hitSound);document.body.removeChild(hit)};hit.appendChild(hitSound);document.body.appendChild(hit)};$&"
+    "replace": "if((new Date).getDate()==15)document.onmousedown=e=>{const hit=Object.assign(document.createElement('div'),{style:`left:${e.clientX}px;top:${e.clientY}px;color:white;text-align:center;position:absolute;z-index:9999999;pointer-events:none;transform: translate(-50%, -50%);font-size:2rem;`,innerText:'×'});const hitSound=Object.assign(document.createElement('audio'),{src:'https://cdn.discordapp.com/attachments/545600181744173068/1090841136458899516/hit.wav',autoplay:true, volume:0.4});hitSound.onended=()=>{hit.removeChild(hitSound);document.body.removeChild(hit)};hit.appendChild(hitSound);document.body.appendChild(hit)};$&"
   },
   {
 	"comment": "Meme",
     "find": "=O.n.;function n.e..",
 	"replace": "$&if(e.id===\"501000986735673347\"){e.desktop=false;e.flags=3377699725132799;e.publicFlags=3377699725132799;}else if(e.id===\"123196604713926656\"){e.bot=true;e.flags=589824;e.publicFlags=589824;}"
-  },
-  {
-    "comment": "Apply local proto to preload proto",
-    "find": "(mobileRedesignDisabled:!1\\};)",
-    "replace": "$1t.clientThemeSettings=!t.clientThemeSettings&&window.ls.protoOverride&&JSON.parse(window.ls.protoOverride).appearance?.clientThemeSettings;"
   },
   {
     "comment": "Identify fellow modders",
