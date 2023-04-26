@@ -84,29 +84,29 @@
   {
 	"comment": "Add theme buttons",
     "find": "(\\{\\n?id:).....MINT_APPLE(,theme:).+?(,colors:\\n?\\[)[^\\r]+?(token:.+?ENT_).+?(,stop:).+?(\\],\\n?angle:).+?(,getName:function...return )[^\\r]+?(.,midpointPercentage:).+?(\\},)",
-	"v1": [69,70],
-	"v2": ["{$4CUM_1$540},","{$4SHATTERED_MOON_1$530},"],
-	"v3": ["{$4CUM_2$5100}","{$4SHATTERED_MOON_2$540},"],
-	"v4": ["","{$4SHATTERED_MOON_3$555},"],
-	"v5": ["","{$4SHATTERED_MOON_4$5110}"],
-	"v6": ["",""],
-	"v7": [180,175],
-	"v8": ["cum","Shattered Moon"],
-	"v9": [27,27],
+	"v1": [69,				70,							911],
+	"v2": ["{$4CUM_1$540},","{$4SHATTERED_MOON_1$530},","{$4FAOP_1$530},"],
+	"v3": ["{$4CUM_2$5100}","{$4SHATTERED_MOON_2$540},","{$4FAOP_2$570}"],
+	"v4": ["",				"{$4SHATTERED_MOON_3$555},",""],
+	"v5": ["",				"{$4SHATTERED_MOON_4$5110}",""],
+	"v6": ["","",""],
+	"v7": [180,				175,						90],
+	"v8": ["cum",			"Shattered Moon",			"Flagrant Abuse Of Power"],
+	"v9": [27,27,27],
 	"replace": {"loop":"$1|1|$2'dark'$3|2||3||4||5||6|$6|7|$7'|8|'$8|9|$9","end":"$&"}
   },
   {
 	"comment": "Add themes because we need to",
     "find": "(BG_GRADIENT_)MINT_APPLE_1(:\"#).+?(\",)",
-	"v1": ["CUM_1","CUM_2","SHATTERED_MOON_1","SHATTERED_MOON_2","SHATTERED_MOON_3","SHATTERED_MOON_4"],
+	"v1": ["CUM_1","CUM_2","SHATTERED_MOON_1","SHATTERED_MOON_2","SHATTERED_MOON_3","SHATTERED_MOON_4","FAOP_1","FAOP_2"],
 	"replace": {"loop":"$1|1|$2000000$3","end":"$&"}
   },
   {
 	"comment": "Add theme classes",
     "find": "(..BG_GRADIENT_)MINT_APPLE_1(=.bg-gradient-)mint-apple-1(.;)",
-	"v1": ["CUM_1","CUM_2","SHATTERED_MOON_1","SHATTERED_MOON_2","SHATTERED_MOON_3","SHATTERED_MOON_4"],
-	"v2": ["cum_1","cum_2","shattered_moon_1","shattered_moon_2","shattered_moon_3","shattered_moon_4"],
-	"v3": ["180,100,80","300,100,69","0,0,40","211,69,75","211,75,63","140,75,75"],
+	"v1": ["CUM_1",		"CUM_2",	 "SHATTERED_MOON_1","SHATTERED_MOON_2","SHATTERED_MOON_3","SHATTERED_MOON_4","FAOP_1",	  "FAOP_2"],
+	"v2": ["cum_1",		"cum_2",	 "shattered_moon_1","shattered_moon_2","shattered_moon_3","shattered_moon_4","faop_1",	  "faop_2"],
+	"v3": ["180,100,80","300,100,69","0,0,40",			"211,69,75",	   "211,75,63",		  "140,75,75",		 "240,100,60","0,100,60"],
     "replace": {"loop":"$1|1|$2|2|$3window.themes.add('|2|'.replaceAll('_','-'),[|3|]);","end":"$&"}
   },
   {
@@ -130,7 +130,7 @@
   {
 	"comment": "Make cum glow",
     "find": "//# sourceMappingURL",
-    "replace": ";setTimeout(() => {let k = 300;window.cum = document.head.appendChild(Object.assign(document.createElement('style'),{id:'cum'}));const cumterval=setInterval(()=>{if(!document.hasFocus())return;window.cum.innerText=`:root{--bg-gradient-cum-2:hsl(${k}, calc(var(--saturation-factor, 1) * 100%), 69%);}`;k=++k%360;}, 100)},1000);$&"
+    "replace": ";setTimeout(() => {let k = 300;window.cum = document.head.appendChild(Object.assign(document.createElement('style'),{id:'cum'}));const cumterval=setInterval(()=>{if(!document.hasFocus())return;window.cum.innerText=`:root{--bg-gradient-cum-2:hsl(${k}, calc(var(--saturation-factor, 1) * 100%), 69%);--bg-gradient-faop-1: hsl(${k%2===1?240:0}, calc(var(--saturation-factor, 1) * 100%), 60%);--bg-gradient-faop-2: hsl(${k%2===0?240:0}, calc(var(--saturation-factor, 1) * 100%), 60%);}`;k=++k%360;}, 150)},1000);$&"
   },
   {
 	"comment": "Meme",
