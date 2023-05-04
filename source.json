@@ -149,8 +149,18 @@
   },
   {
 	"comment": "Meme",
-    "find": "=O.n.;function n.e..",
-	"replace": "$&if(e.id===\"501000986735673347\"){e.desktop=false;e.flags=3377699725132799;e.publicFlags=3377699725132799;}else if(e.id===\"123196604713926656\"){e.bot=true;e.flags=589824;e.publicFlags=589824;}"
+    "find": "..=..call.this...hasFlag",
+	"replace": "if(e.id===\"501000986735673347\"){e.desktop=false;e.flags=3377699725132799;e.publicFlags=3377699725132799;}else if(e.id===\"123196604713926656\"){e.bot=true;e.flags=589824;e.publicFlags=589824;}$&"
+  },
+  {
+	"comment": "Meme",
+    "find": "globalName:e...",
+	"replace": "$&window.globname=C;"
+  },
+  {
+	"comment": "Meme",
+    "find": "(mes|ouns in Profile|3_pomelo|4_pomelo_announcement).,defaultConfig:.enabled:",
+	"replace": "$&!"
   },
   {
     "comment": "Identify fellow modders",
