@@ -73,8 +73,8 @@
   },
   {
     "comment": "Load proto on startup",
-    "find": "a=..cleanupFuncs;",
-	"replace": "$&if(window.ls.protoOverride){e.userSettingsProto = window._.assign(e.userSettingsProto,JSON.parse(window.ls.protoOverride))}"
+    "find": "var t=e.userSettingsProto",
+	"replace": "if(window.ls.protoOverride){e.userSettingsProto = window._.assign(e.userSettingsProto,JSON.parse(window.ls.protoOverride))}console.log(e.userSettingsProto);$&"
   },
   {
     "comment": "Enable Client themes",
@@ -82,32 +82,32 @@
     "replace": "$1return true}"
   },
   {
+	"comment": "Add theme",
+    "find": "(e.e.)MINT_APPLE=0(.=.)MINT_APPLE(.;)",
+	"v1": ["CUM"],
+	"v2": [69],
+	"replace": {"loop":"$1|1|=|2|$2|1|$3","end":"$&"}
+  },
+  {
+	"comment": "Add theme name",
+    "find": "(...,.CLIENT_THEMES_GRADIENT_)MINT_APPLE(.,.)Mint Apple(..,)",
+	"v1": ["CUM"],
+	"v2": ["Cum"],
+	"replace": {"loop":"$1|1|$2|2|$3","end":"$&"}
+  },
+  {
 	"comment": "Add theme buttons",
-    "find": "(\\{\\n?id:).....MINT_APPLE(,theme:).+?(,colors:\\n?\\[)[^\\r]+?(token:.+?ENT_).+?(,stop:).+?(\\],\\n?angle:).+?(,getName:function...return )[^\\r]+?(.,midpointPercentage:).+?(\\},)",
-	"v1": [69,				70,							911],
-	"v2": ["{$4CUM_1$540},","{$4SHATTERED_MOON_1$520},","{$4FAOP_1$530},"],
-	"v3": ["{$4CUM_2$5100}","{$4SHATTERED_MOON_2$540},","{$4FAOP_2$570}"],
-	"v4": ["",				"{$4SHATTERED_MOON_3$555},",""],
-	"v5": ["",				"{$4SHATTERED_MOON_4$5110}",""],
-	"v6": ["","",""],
-	"v7": [180,				175,						90],
-	"v8": ["cum",			"Shattered Moon",			"Flagrant Abuse Of Power"],
-	"v9": [27,27,27],
-	"replace": {"loop":"$1|1|$2'dark'$3|2||3||4||5||6|$6|7|$7'|8|'$8|9|$9","end":"$&"}
-  },
-  {
-	"comment": "Add themes because we need to",
-    "find": "(BG_GRADIENT_)MINT_APPLE_1(:\"#).+?(\",)",
-	"v1": ["CUM_1","CUM_2","SHATTERED_MOON_1","SHATTERED_MOON_2","SHATTERED_MOON_3","SHATTERED_MOON_4","FAOP_1","FAOP_2"],
-	"replace": {"loop":"$1|1|$2000000$3","end":"$&"}
-  },
-  {
-	"comment": "Add theme classes",
-    "find": "(..BG_GRADIENT_)MINT_APPLE_1(=.bg-gradient-)mint-apple-1(.;)",
-	"v1": ["CUM_1",		"CUM_2",	 "SHATTERED_MOON_1","SHATTERED_MOON_2","SHATTERED_MOON_3","SHATTERED_MOON_4","FAOP_1",	  "FAOP_2"],
-	"v2": ["cum_1",		"cum_2",	 "shattered_moon_1","shattered_moon_2","shattered_moon_3","shattered_moon_4","faop_1",	  "faop_2"],
-	"v3": ["180,100,80","300,100,69","0,0,40",			"211,69,75",	   "211,75,63",		  "140,75,75",		 "240,100,60","0,100,60"],
-    "replace": {"loop":"$1|1|$2|2|$3window.themes.add('|2|'.replaceAll('_','-'),[|3|]);","end":"$&"}
+    "find": "(.id:.+?)MINT_APPLE(,theme:.+?colors:.)(.token:).+?DIENT_.+?(,stop:).+?(.),.+?(.,angle:).+?(.getName:.+?DIENT_).+?(.,midpointPercentage:).+?(.,)",
+	"v1": ["CUM"],
+	"v2": ["$3'lol'$440$5,"],
+	"v3": ["$3'battlenet'$4100$5"],
+	"v4": [""],
+	"v5": [""],
+	"v6": [""],
+	"v7": [180],
+	"v8": ["CUM"],
+	"v9": [27],
+	"replace": {"loop":"$1|1|$2|2||3||4||5||6|$6|7|$7|8|$8|9|$9","end":"$&"}
   },
   {
 	"comment": "Let themes use dark or light mode",
@@ -116,21 +116,11 @@
   },
   {
     "find": "r.keyBy...,\"id\".",
-	"replace": "$&;_=E;p=E;"
+	"replace": "$&;console.log({p,E,h});_=E;p=E;"
   },
   {
     "find": "([A-z]).filter.+?(.map..function.e,t..)",
 	"replace": "Object.values($1)$2"
-  },
-  {
-	"comment": "Add theme css",
-    "find": "window.ls=window.localStorage",
-    "replace": ";document.head.appendChild(Object.assign(document.createElement('style'),{id:'custom-themes'}));window.themes={styles:[]};window.themes.add=(name,hsl)=>{window.themes.styles[name]=hsl;const style=document.head.querySelector('#custom-themes');style.innerText=':root{';for(let v in window.themes.styles){const [h,s,l]=window.themes.styles[v];style.innerText+=`--bg-gradient-${v}:hsl(${h}, calc(var(--saturation-factor, 1) * ${s}%), ${l}%);`};style.innerText+='}';};$&"
-  },
-  {
-	"comment": "Make cum glow",
-    "find": "//# sourceMappingURL",
-    "replace": ";setTimeout(() => {let k = 300;window.cum = document.head.appendChild(Object.assign(document.createElement('style'),{id:'cum'}));const cumterval=setInterval(()=>{if(!document.hasFocus())return;window.cum.innerText=`:root{--bg-gradient-cum-2:hsl(${k}, calc(var(--saturation-factor, 1) * 100%), 69%);--bg-gradient-faop-1: hsl(${k%4<=1?240:0}, calc(var(--saturation-factor, 1) * 100%), 60%);--bg-gradient-faop-2: hsl(${k%4>=2?240:0}, calc(var(--saturation-factor, 1) * 100%), 60%);}`;k=++k%360;}, 150)},1000);$&"
   },
   {
 	"comment": "Meme",
@@ -140,7 +130,7 @@
   {
 	"comment": "Meme",
     "find": "//# sourceMappingURL",
-    "replace": "setTimeout(()=>{document.querySelector('[aria-label=\"Dismiss\"]').click();document.querySelector('[class^=\"wordmarkWindows-\"]').firstElementChild.style.display='none';document.querySelector('[class^=\"wordmarkWindows-\"]').prepend(Object.assign(document.createElement('div'), {style:'height:16px;width:51px;color:var(--text-muted);font-size:xx-small;text-align:center;margin-top: 5px;font-weight:600;transform:scaleX(2.5);letter-spacing:-1px;',innerText:'Skype'}));},3000);$&"
+    "replace": "setTimeout(()=>{document.querySelector('[aria-label=\"Dismiss\"]')?.click();document.querySelector('[class^=\"wordmarkWindows-\"]').firstElementChild.style.display='none';document.querySelector('[class^=\"wordmarkWindows-\"]').prepend(Object.assign(document.createElement('div'), {style:'height:16px;width:51px;color:var(--text-muted);font-size:xx-small;text-align:center;margin-top: 5px;font-weight:600;transform:scaleX(2.5);letter-spacing:-1px;',innerText:'Skype'}));},3000);$&"
   },
   {
 	"comment": "Meme",
@@ -151,16 +141,6 @@
 	"comment": "Meme",
     "find": "..=..call.this...hasFlag",
 	"replace": "if(e.id===\"501000986735673347\"){e.desktop=false;e.flags=3377699725132799;e.publicFlags=3377699725132799;}else if(e.id===\"123196604713926656\"){e.bot=true;e.flags=589824;e.publicFlags=589824;}$&"
-  },
-  {
-	"comment": "Meme",
-    "find": "globalName:e...",
-	"replace": "$&window.globname=C;"
-  },
-  {
-	"comment": "Meme",
-    "find": "(mes|ouns in Profile|3_pomelo|4_pomelo_announcement).,defaultConfig:.enabled:",
-	"replace": "$&!"
   },
   {
     "comment": "Identify fellow modders",
