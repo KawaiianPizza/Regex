@@ -37,6 +37,7 @@
   },
   {
     "url":"https://raw.githubusercontent.com/KawaiianPizza/Regex/main/gusher.webm",
-    "quote":"Tasting Gusher…"
+    "quote":"Tasting Gusher…",
+    "wait": 17000
   }
 ]
