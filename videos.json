@@ -41,8 +41,13 @@
     "wait": 17000
   },
   {
-    "url":"https://raw.githubusercontent.com/KawaiianPizza/Regex/main/neighbor.webm",
+    "url":"https://raw.githubusercontent.com/KawaiianPizza/Regex/main/fool.webm",
     "quote":"Getting back from the church…",
     "wait": 13500
+  },
+  {
+    "url":"https://raw.githubusercontent.com/KawaiianPizza/Regex/main/neighbor.webm",
+    "quote":"Fooling twice…",
+    "wait": 15500
   }
 ]
