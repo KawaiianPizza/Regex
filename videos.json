@@ -49,5 +49,10 @@
     "url":"https://raw.githubusercontent.com/KawaiianPizza/Regex/main/gusher.webm",
     "quote":"Tasting Gusher…",
     "wait": 16750
+  },
+  {
+    "url":"https://raw.githubusercontent.com/KawaiianPizza/Regex/main/nonono.webm",
+    "quote":"Joining Kawaiian's playpen…",
+    "wait": 5000
   }
 ]
